@@ -14,6 +14,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    @IBOutlet weak var CelsiusField: UITextField!
+    
+    @IBOutlet weak var ConvertButton: UIButton!
+    
+    @IBAction func ConvertButtonClicked(_ sender: UIButton) {
+        if let result = CelsiusField.text{
+            if result==""{
+                return
+            }else{
+                if let num = Double(result){
+                    let output = num * (9/5) + 32
+                    ResultLabel.text = String(output)
+                }
+            }
+        }
+    }
+    @IBOutlet weak var ResultLabel: UILabel!
+    
 
 
 }
